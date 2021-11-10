@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" minimum-scale=1, maximum-scale=1>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>devSpace</title>
+</head>
+
+<body onload="greetings()">
+    <div id="container">
+        <div id="title">
+            <h1>Welcome to devSpace</h1>
+            <h2>Thanks for creating an account</h2>
+        </div>
+        <form name="myForm" id="myForm" onsubmit="return submitForm()">
+            <hr>
+            <div id="row1">
+                <div class="columns">
+                    <label for="fName">Enter your first name:</label>
+                    <input type="text" id="fName">
+                    <div class="fName-error">Invalid first name</div>
+                    <label for="lName">Enter your last name:</label>
+                    <input type="text" id="lName">
+                    <div class="lName-error">Invalid last name</div>
+                </div>
+                <div class="columns">
+                    <label for="email">Enter your email:</label>
+                    <input type="email" id="email">
+                    <div class="email-error">Invalid email</div>
+                    <label for="bd">Enter your year of birth:</label>
+                    <input type="text" id="bD">
+                    <div class="bD-error">Invalid year of birth</div>
+                </div>
+            </div>
+            <hr>
+            <div id="row2">
+                <div class="columns">
+                    <label for="area">Check your area:
+                        <label for="Front-End">
+                            <input type="radio" id="Front-End" name="area"> Front-End
+                        </label>
+                        <label for="Back-End">
+                            <input type="radio" id="Back-End" name="area"> Back-End
+                        </label>
+                        <label for="Full-Stack">
+                            <input type="radio" id="Full-Stack" name="area"> Full-Stack
+                        </label>
+                    </label>
+                </div>
+                <div class="columns">
+                    <label for="level">Level
+                        <select name="level" id="select">
+                            <option value="default" selected>Select an option</option>
+                            <option value="junior">Junior</option>
+                            <option value="mid">Mid</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <hr>
+            <div id="row3">
+                <div class="columns">
+                    <label for="tecnologies">Wich tecnologies do you work with?
+                        <label for="HTML">
+                            <input id="HTML" type="checkbox" name="tec"> HTML
+                        </label>
+                        <label for="CSS">
+                            <input id="CSS" type="checkbox" name="tec"> CSS
+                        </label>
+                        <label for="JavaScript">
+                            <input  id="JavaScript" type="checkbox" name="tec"> JavaScript
+                        </label>
+                        <label for="PHP">
+                            <input id="PHP" type="checkbox" name="tec"> PHP
+                        </label>
+                    </label>
+                </div>
+                <div class="columns">
+                    <button type="submit">SUBMIT</button>
+                    <div class="box-error">Please fill all boxes</div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

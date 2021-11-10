@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-radius:10px ;
+}
+
+html,body{
+    height: 100%;
+}
+
+body, #container, #title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    width: 100%;
+    background: linear-gradient(-45deg, #ee7752, #7e29d3, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#container{
+    background-color: #357891;
+    width: 80%;
+    height: 80%;
+    max-height: 0;
+    overflow: hidden;
+    background-color: rgb(48, 61, 61,20%);
+    color: whitesmoke;
+    font-size: 1.6vw;
+    box-shadow: rgb(37, 36, 36) 3px 3px 9px ;
+    opacity: 0;
+}
+
+.container-in{
+    transition: all 1.5s ease-in-out;
+    max-height: 100% !important;
+    padding: 1em;
+    opacity: 100 !important;
+}
+
+h1{
+    font-size: 56px;
+}
+
+h2{
+    cursor: default;
+    border-radius: unset;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    text-align: center;
+}
+
+.h2-in{
+    transition: all 1.5s;
+    max-height: 100%;
+    opacity: 100;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+}
+
+.form-out{
+    transition: all 1s;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+label{
+    display: inline-block;
+    padding: .3em;
+}
+
+#row1, #row2{
+    display: flex;
+    justify-content: center;
+}
+
+#row1 .columns{
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: .3em;
+}
+
+#row2 .columns{
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: .5em 0;
+}
+
+#row3 .columns{
+    text-align: center;
+}
+
+.fName-error, .lName-error, .email-error, .bD-error, .box-error{
+    margin: .3em 0;
+    opacity: 0;
+    cursor: default;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: red;
+}
+
+.error-in{
+    transition: all .5s;
+    opacity: 100 !important;
+}
+
+.error-out{
+    opacity: 0 !important;
+}
+
+input[type="text"], input[type="email"]{
+    padding: .3em;
+    transition: all .5s;
+    outline: none;
+}
+input[type="text"]:hover, input[type="email"]:hover{
+    transition: all .5s;
+    transform: scale(1.02);
+}
+
+input[type="radio"], input[type="checkbox"]{
+    accent-color: green;
+}
+
+select,button{
+    position: relative;
+    padding: 1em;
+    margin: 1em 0;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: all .5s;
+    outline: none;
+    border: none;
+    --border-size: 2px;
+}
+
+button:hover{
+    transition: all .5s ease-in-out;
+    transform: scale(1.2);
+}
+
+button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    transition: all .5s ease-in-out;
+    border: var(--border-size) solid #e3e3e3;
+}
+button:hover::before{
+    top: calc(var(--border-size) * -2);
+    right: calc(var(--border-size) * -2);
+    bottom: calc(var(--border-size) * -2);
+    left: calc(var(--border-size) * -2);
+}
+
+@media (max-width: 768px){
+    #row1,#row2{
+        flex-direction: column;
+    }
+
+    #row1 .columns, #row2 .columns, #row2 label{
+        padding: 0;
+    }
+
+    h1{
+        font-size: 26px;
+    }
+    h2{
+        font-size: 16px;
+    }
+
+    #container{
+        width: 80%;
+        height: 90%;
+        font-size: 15px;
+    }
+    
+    .fName-error, .lName-error, .email-error, .bD-error, .box-error{
+    font-size: 11px;
+    }
+    
+}
